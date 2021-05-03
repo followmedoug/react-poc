@@ -11,8 +11,10 @@ const INITIAL_STATE = {
 /** REDUCERS */
 export default function pokemon(state = INITIAL_STATE, action) {
   switch (action.type) {
-    case Types.GET_POKEMONS_REQUEST:
+    case Types.GET_POKEMONS_REQUEST: {
+      console.log("olha o reducer", action);
       return { ...state, loading: true };
+    }
 
     default:
       return state;
@@ -21,5 +23,6 @@ export default function pokemon(state = INITIAL_STATE, action) {
 
 /** ACTION CREATORS */
 export function getPokemonsRequest() {
+  console.log("chamou o request");
   return { type: Types.GET_POKEMONS_REQUEST };
 }
